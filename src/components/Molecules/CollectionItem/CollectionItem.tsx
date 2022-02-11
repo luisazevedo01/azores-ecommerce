@@ -14,7 +14,7 @@ const CollectionItem = ({
 }: ICollectionItem): JSX.Element => {
   return (
     <div
-      onClick={() => window.location.replace(`${id + name}`)}
+      onClick={() => window.location.replace("itemDetail/"+`${id}`)}
       className="collection-item"
     >
       <div
