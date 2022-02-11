@@ -14,19 +14,21 @@ const FormInput = ({
   label,
   value,
   ...otherProps
-}: IFormInput) => (
-  <div className="group">
-    <input className="form-input" onChange={handleChange} {...otherProps} />
-    {label ? (
-      <label
-        className={`${
-          typeof value === "string" ? "shrink" : ""
-        } form-input-label`}
-      >
-        {label}
-      </label>
-    ) : null}
-  </div>
-);
+}: IFormInput) => {
+  return (
+    <div className="group">
+      <input className="form-input" onChange={handleChange} {...otherProps} />
+      {label ? (
+        <label
+          className={`${
+            typeof value === "string" ? "shrink" : ""
+          } form-input-label`}
+        >
+          {label}
+        </label>
+      ) : null}
+    </div>
+  );
+};
 
 export default FormInput;

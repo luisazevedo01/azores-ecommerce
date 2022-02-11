@@ -6,7 +6,8 @@ import MenuItem from "../../Molecules/MenuItem/MenuItem";
 import "./Directory.styles.scss";
 
 const Directory = (): JSX.Element => {
-  const [sections] = useState(DIRECTORIES);
+  const [sections, setSections] = useState(DIRECTORIES);
+
   return (
     <div className="directory-menu">
       {sections.map(({ id, ...otherSectionProps }) => (

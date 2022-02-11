@@ -11,13 +11,14 @@ const CustomButton = ({
   children,
   isGoogleSignIn,
   ...otherProps
-}: IButtonProps): JSX.Element => (
-  <button
-    className={`${isGoogleSignIn ? "google-sign-in" : ""} custom-button`}
-    {...otherProps}
-  >
-    {children}
-  </button>
-);
-
+}: IButtonProps): JSX.Element => {
+  return (
+    <button
+      className={`${isGoogleSignIn ? "google-sign-in" : ""} custom-button`}
+      {...otherProps}
+    >
+      {children}
+    </button>
+  );
+};
 export default CustomButton;

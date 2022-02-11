@@ -3,15 +3,24 @@ import FormInput from "../../Atoms/CustomButton/CustomButton";
 import CustomButton from "../../Atoms/CustomButton/CustomButton";
 import "./SignUp.styles.scss";
 
-const initalInfo = {
+type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
+
+interface ISignUpInfo {
+  displayName: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
+const initalInfo: ISignUpInfo = {
   displayName: "",
   email: "",
   password: "",
   confirmPassword: "",
 };
 
-const SignUp = () => {
-  const [signUpInfo, setSignUpInfo] = useState(initalInfo);
+const SignUp = (): JSX.Element => {
+  const [signUpInfo, setSignUpInfo] = useState<ISignUpInfo>(initalInfo);
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
@@ -22,7 +31,7 @@ const SignUp = () => {
     }
   };
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: ChangeEvent) => {
     const { name, value } = event.target;
     const updatedInfo = { ...signUpInfo, [name]: value };
     setSignUpInfo(updatedInfo);
