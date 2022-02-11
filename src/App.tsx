@@ -2,6 +2,7 @@ import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Organisms/Header/Header";
 import AuthPage from "./components/Pages/Auth/AuthPage";
+import Contact from "./components/Pages/Contact/ContactPage";
 import HomePage from "./components/Pages/HomePage/HomePage";
 import ShopPage from "./components/Pages/Shop/ShopPage";
 
@@ -13,6 +14,7 @@ function App(): JSX.Element {
         <Route path="/" element={HomePage()} />
         <Route path="/shop" element={ShopPage()} />
         <Route path="/signin" element={AuthPage()} />
+        <Route path="/contact" element={Contact()} />
       </Routes>
     </Router>
   );

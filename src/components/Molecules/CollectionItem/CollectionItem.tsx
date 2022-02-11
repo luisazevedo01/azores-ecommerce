@@ -1,17 +1,22 @@
 import "./CollectionItem.styles.scss";
 
 interface ICollectionItem {
+  id: number;
   name: string;
   price: number;
   imageUrl: string;
 }
 const CollectionItem = ({
+  id,
   name,
   price,
   imageUrl,
 }: ICollectionItem): JSX.Element => {
   return (
-    <div className="collection-item">
+    <div
+      onClick={() => window.location.replace(`${id + name}`)}
+      className="collection-item"
+    >
       <div
         className="image"
         style={{

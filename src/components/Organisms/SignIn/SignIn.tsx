@@ -38,7 +38,7 @@ const SignIn = (): JSX.Element => {
         <FormInput
           name="email"
           type="email"
-          handleChange={handleChange}
+          onChange={handleChange}
           value={formInfo.email}
           label="email"
           required
@@ -47,7 +47,7 @@ const SignIn = (): JSX.Element => {
           name="password"
           type="password"
           value={formInfo.password}
-          handleChange={handleChange}
+          onChange={handleChange}
           label="password"
           required
         />
