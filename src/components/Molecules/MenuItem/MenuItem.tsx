@@ -11,12 +11,12 @@ const MenuItem = ({
   title,
   imageUrl,
   size,
-  linkUrl,
+  linkUrl
 }: IMenuItemProps): JSX.Element => {
   return (
     <div
       className={`${size} menu-item`}
-      onClick={() => window.location.replace(`${linkUrl}`)}
+      onClick={() => window.location.replace("/category/" + `${title}`)}
     >
       <div
         className="background-image"
