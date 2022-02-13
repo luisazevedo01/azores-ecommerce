@@ -1,4 +1,5 @@
 import "./CollectionItem.styles.scss";
+import { useNavigate } from "react-router-dom";
 
 interface ICollectionItem {
   id: number;
@@ -12,9 +13,14 @@ const CollectionItem = ({
   price,
   imageUrl,
 }: ICollectionItem): JSX.Element => {
+ let navigate = useNavigate();
+  const routeChange = (id:number) =>{ 
+    let path = `/itemDetail/`+id; 
+    navigate(path);
+  } 
   return (
     <div
-      onClick={() => window.location.replace("itemDetail/"+`${id}`)}
+      onClick={() => routeChange(id)}
       className="collection-item"
     >
       <div

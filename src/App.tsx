@@ -6,6 +6,7 @@ import Contact from "./components/Pages/Contact/ContactPage";
 import HomePage from "./components/Pages/HomePage/HomePage";
 import ShopPage from "./components/Pages/Shop/ShopPage";
 import ItemDetail from "./components/Pages/Item/ItemDetail";
+import Category from "./components/Pages/Category/Category";
 
 function App(): JSX.Element {
 
@@ -18,6 +19,7 @@ function App(): JSX.Element {
         <Route path="/signin" element={<AuthPage/>} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="/itemDetail/:itemId" element={<ItemDetail/>}/>
+        <Route path="/category/:categoryName" element={<Category/>}/>
       </Routes>
     </Router>
   );
