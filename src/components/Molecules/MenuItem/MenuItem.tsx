@@ -1,4 +1,5 @@
 import "./MenuItem.styles.scss";
+import { useNavigate } from "react-router-dom";
 
 interface IMenuItemProps {
   title: string;
@@ -13,10 +14,15 @@ const MenuItem = ({
   size,
   linkUrl
 }: IMenuItemProps): JSX.Element => {
+  let navigate = useNavigate();
+  const routeChange = (title:string) =>{ 
+    let path = `/category/`+title; 
+    navigate(path);
+  } 
   return (
     <div
       className={`${size} menu-item`}
-      onClick={() => window.location.replace("/category/" + `${title}`)}
+      onClick={() => routeChange(title)}
     >
       <div
         className="background-image"
