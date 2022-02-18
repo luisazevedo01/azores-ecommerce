@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import CollectionItem from "../../Molecules/CollectionItem/CollectionItem";
+import CustomCategoryLink from "../../Atoms/CustomCategoryLink/CustomCtgLing";
 
 import "./CollectionPreview.styles.scss";
 
@@ -19,6 +20,8 @@ const CollectionPreview = ({
   title,
   items,
 }: ICollectionPreview): JSX.Element => {
+  title = title.toLowerCase();
+
   return (
     <div className="collection-preview">
       <h1 className="title">{title.toUpperCase()}</h1>
@@ -31,6 +34,7 @@ const CollectionPreview = ({
             </Fragment>
           ))}
       </div>
+      <CustomCategoryLink title={title}/>
     </div>
   );
 };

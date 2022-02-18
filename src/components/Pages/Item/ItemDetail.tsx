@@ -1,6 +1,7 @@
-import { Fragment, useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SHOP_DATA from "../../../mocks/shop_data";
+
 
 const ItemDetail = () => {
 
@@ -10,6 +11,7 @@ const ItemDetail = () => {
    console.log("on use effect" + itemId)
 
    useEffect(() => {
+    console.log(itemId);
      
     for(let i = 0; i < SHOP_DATA.length; i++){
         for(let k = 0; k < SHOP_DATA[i].items.length; k++){
