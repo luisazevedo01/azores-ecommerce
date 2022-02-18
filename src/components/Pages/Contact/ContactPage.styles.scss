@@ -1,3 +1,96 @@
-.contact_wrapper {
-    text-align: center;
+.contact-form__container {
+  /* height: calc(100vh - (var(--header-height) + 4em)); */
+  color: var(--font-color-3);
+  width: 50%;
+  margin: auto;
+  padding-bottom: 3em;
 }
+
+.contact-form__title {
+  font-family: var(--font-family-2);
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+}
+
+.contact-form__subtitle {
+  font-size: 0.8rem;
+  line-height: 1.5em;
+  font-weight: 300;
+  text-align: center;
+}
+
+.contact-form__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form__form label {
+  font-size: 0.8rem;
+  margin: 0.5em 0;
+}
+
+.contact-form__form label span {
+  color: rgb(209, 0, 0);
+  margin-left: 0.1em;
+}
+
+.contact-form__form input,
+.contact-form__form textarea {
+  display: block;
+  width: 100%;
+  border-radius: 0;
+  border: 1px solid rgb(189, 189, 189);
+  margin-top: 0.5em;
+  padding: 0.5em;
+  font-family: var(--font-family-1);
+}
+
+.contact-form__form textarea {
+  height: 10em;
+}
+
+.contact-form__form input:focus,
+.contact-form__form textarea:focus {
+  outline: 1px solid var(--font-color-2);
+  border: 1px solid var(--font-color-2);
+  background-color: rgb(240, 243, 248);
+}
+
+/*Remove background color on auto-complete*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px rgb(240, 243, 248) inset !important;
+}
+
+.contact-form-form__error-message {
+  font-weight: 400;
+  color: rgb(209, 0, 0);
+  margin: 0.5em 0 0 0;
+}
+
+.contact-form__button {
+  width: 10em;
+  margin-top: 1.5em;
+  padding: 0.5em 0;
+  align-self: center;
+  color: var(--background-color-1);
+  border: 1px solid var(--background-color-1);
+  background-color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.contact-form__button:hover {
+  color: white;
+  background-color: var(--background-color-1);
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+  .contact-form__container {
+    width: 100%;
+  }
+}
+

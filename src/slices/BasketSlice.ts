@@ -32,6 +32,6 @@ export const BasketSlice = createSlice({
 export const { addItem, removeItem, addByAmount } = BasketSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
-export const selectBasketItems = (state: any) => state.basket.items;
+export const selectBasketItems = (state: RootState) => state.basket.items;
 
 export default BasketSlice.reducer;
