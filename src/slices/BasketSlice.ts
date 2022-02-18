@@ -11,14 +11,14 @@ const initialState: IBasketState = {
   items: Array(5).fill(0),
 };
 
-export const basketSlice = createSlice({
+export const BasketSlice = createSlice({
   name: "basket",
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
     addItem: (state, action: PayloadAction<number>) => {
       const replicItems = state.items.slice();
-      state.items = replicItems.push(action.payload);
+      state.items = state.items.slice();
     },
     removeItem: (state) => {
       state.items = state.items.slice();
@@ -29,9 +29,9 @@ export const basketSlice = createSlice({
   },
 });
 
-export const { addItem, removeItem, addByAmount } = basketSlice.actions;
+export const { addItem, removeItem, addByAmount } = BasketSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
-export const selectBasketItems = (state: RootState) => state.basket.items;
+export const selectBasketItems = (state: any) => state.basket.items;
 
-export default basketSlice.reducer;
+export default BasketSlice.reducer;
